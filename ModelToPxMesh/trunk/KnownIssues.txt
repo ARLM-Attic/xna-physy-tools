@@ -1,0 +1,1 @@
+- Model transforms are not loaded from file yet, so it works well for single mesh models, but for many mesh models it can not work as expected
