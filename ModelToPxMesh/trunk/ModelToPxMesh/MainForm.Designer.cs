@@ -157,13 +157,14 @@ namespace WinFormsContentLoading
             // quickHelpToolStripMenuItem
             // 
             this.quickHelpToolStripMenuItem.Name = "quickHelpToolStripMenuItem";
-            this.quickHelpToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.quickHelpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quickHelpToolStripMenuItem.Text = "Quick Help";
+            this.quickHelpToolStripMenuItem.Click += new System.EventHandler(this.OnClick);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About..";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutClick);
             // 

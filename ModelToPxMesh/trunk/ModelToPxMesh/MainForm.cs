@@ -14,6 +14,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using ModelToPxMesh;
 using StillDesign.PhysX;
 using XnaPhysXLoader;
 
@@ -246,6 +247,11 @@ namespace WinFormsContentLoading
                 miCullBoth.Checked = false;
                 miCullFront.Checked = false;
             }
+        }
+
+        private void OnClick(object sender, EventArgs e)
+        {
+            new QuickHelp().Show(this);
         }
     }
 }

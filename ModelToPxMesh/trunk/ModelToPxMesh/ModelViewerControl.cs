@@ -327,9 +327,14 @@ namespace WinFormsContentLoading
             return true;
         }
 
+        /// <summary>
+        /// This method take a name of a file, created by this app and create a PhysX actor with all shapes saved on file.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public bool LoadPxMesh(string name)
         {
-
+            //Get the streams names from file
             var streams = PxMeshDecoder.Load(name);
             var actorDesc = new ActorDescription();
 
@@ -337,7 +342,7 @@ namespace WinFormsContentLoading
             {
                 for (int i = 0; i < streams.Count; i++)
                 {
-                    actorDesc.Shapes.Add(GetPxMeshFromFile(streams[i], Matrix.Identity));
+                    actorDesc.Shapes.Add(GetPxMeshFromFile(streams[i], Matrix.Identity)); //Load the PxMesh present in file
                 }
                 actorDesc.GlobalPose = Matrix.CreateRotationY(0) * Matrix.CreateTranslation(Vector3.Zero);
                 //actorDesc.GlobalPose = modelSceneNode.Model.Root.Transform;
@@ -358,6 +363,12 @@ namespace WinFormsContentLoading
             
         }
 
+        /// <summary>
+        /// Here is where the magic happens! It loads the physX file and get from it the triangle mesh.
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="transforms"></param>
+        /// <returns></returns>
         public static TriangleMeshShapeDescription GetPxMeshFromFile(string stream, Matrix transforms)
         {
             var fs = File.OpenRead(stream);
